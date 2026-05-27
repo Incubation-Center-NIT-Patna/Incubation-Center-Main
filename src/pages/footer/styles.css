@@ -9,7 +9,6 @@
   }
   .footer *{
       margin:0;
-      background-color: #0a0a0a;
       padding:0;
       box-sizing: border-box;
   }
@@ -76,7 +75,7 @@
       margin:0 10px 10px 0;
       text-align: center;
       line-height: 40px;
-      border-radius: 50%;
+      border-radius: 8px;
       color: #ffffff;
       transition: all 0.5s ease;
       padding-top: 3px;
@@ -132,7 +131,7 @@
   }
   @media(max-width: 574px){
     .footer-col{
-      width: 100%;
+      width: 50%;
   }
   .footer_container2{
       align-items: stretch;
