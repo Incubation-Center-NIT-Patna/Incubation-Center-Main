@@ -54,7 +54,16 @@ const Incubations = () => {
               <swiper-slide key={index}>
                 <article className="productions_card">
                   <div className="card__image">
-                    <img src={item.img} alt="incubation" className="card__img" />
+                    <img 
+                      src={item.img || "img/incubations/fliptoknow.png"} 
+                      alt={item.name || "incubation"} 
+                      className="card__img" 
+                      onError={(e) => { 
+                        if (e.currentTarget.src !== "img/incubations/fliptoknow.png") {
+                          e.currentTarget.src = "img/incubations/fliptoknow.png";
+                        }
+                      }} 
+                    />
                     <div className="card__shadow"></div>
                   </div>
 
