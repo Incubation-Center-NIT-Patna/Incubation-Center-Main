@@ -1,0 +1,130 @@
+.past-members {
+  min-height: 100vh;
+  color: #f8fafc;
+}
+
+.past-banner {
+  height: 30vh;
+  min-height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(rgba(82, 183, 255, 0.05), rgba(0,0,0, 0.8)),
+    url("../../../public/img/image.jpg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.past-banner-content {
+  text-align: center;
+  padding: 20px;
+}
+
+.past-banner-content h1 {
+  color: white;
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.past-banner-content p {
+  color: #cbd5e1;
+  margin-top: 15px;
+  font-size: 1.5rem;
+}
+
+.session-container {
+  width: min(95%, 1400px);
+  margin: 30px auto;
+}
+
+.session-header {
+  margin-bottom: 30px;
+}
+
+.session-header h1 {
+  text-align: center;
+  color: #ffffff;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.role-section {
+  margin-bottom: 70px;
+}
+
+.role-title {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.role-title h3 {
+  display: inline-block;
+  color: #f8fafc;
+  font-size: 1.7rem;
+  font-weight: 600;
+  margin: 0;
+  padding-bottom: 10px;
+  position: relative;
+}
+
+.role-title h3::after {
+  content: "";
+  position: absolute;
+  left: 20%;
+  bottom: 0;
+  width: 60%;
+  height: 3px;
+  background: #3b82f6;
+  border-radius: 999px;
+}
+
+.members-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+  gap: 40px;
+}
+
+.members-container > * {
+  flex: 0 1 320px;
+  max-width: 350px;
+}
+
+.session-container:not(:last-child)::after {
+  content: "";
+  display: block;
+  width: 90%;
+  height: 1px;
+  background: rgba(255,255,255,0.2);
+  margin: 80px auto 0;
+}
+
+@media (max-width: 1024px) {
+  .past-banner-content h1 {
+    font-size: 3rem;
+  }
+  .role-title h3{
+    font-size: 2rem;
+  }
+  .members-container {
+    gap: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .past-banner {
+    height: 30vh;
+    min-height: 280px;
+  }
+  .members-container {
+    gap: 20px;
+  }
+  .members-container > * {
+    flex: 1 1 100%;
+    max-width: 360px;
+  }
+}

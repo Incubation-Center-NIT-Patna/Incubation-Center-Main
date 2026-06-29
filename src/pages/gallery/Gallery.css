@@ -38,19 +38,32 @@
   margin: 0 auto;
 
 }
-.gallerydiv{
+.gallerydiv {
   width: 250px;
   /* padding: 1rem; */
 }
-.imgdiv{
+.imgdiv {
   overflow: hidden;
- margin: 1rem 0.5rem;
+  margin: 1rem 0.5rem;
+  aspect-ratio: 4 / 3;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: box-shadow 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
 }
-.imgdiv img{
+.imgdiv:hover {
+  box-shadow: 0 8px 25px rgba(14, 239, 255, 0.35);
+  border-color: rgba(14, 239, 255, 0.5);
+}
+.imgdiv img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.5s;
+  transition: transform 0.5s ease;
+  display: block;
+}
+.imgdiv:hover img {
+  transform: scale(1.08);
 }
 .events_btn{
   width: 93%;
@@ -106,4 +119,316 @@
 
 .change-button:hover {
   background-color: #0056b3;
+}
+
+/* ========== Carousel Card Styles ========== */
+
+.gallery-carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin: 3rem auto 1.5rem;
+  position: relative;
+  max-width: 1100px;
+  min-height: 380px;
+  perspective: 1200px;
+}
+
+.carousel-cards-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  position: relative;
+  width: 100%;
+  min-height: 380px;
+}
+
+/* Individual card */
+.carousel-card {
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.45);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  flex-shrink: 0;
+  position: relative;
+}
+
+.carousel-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 18px;
+}
+
+.carousel-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+.carousel-card-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+}
+
+/* --- Center Card (hero) --- */
+.carousel-card-center {
+  width: 420px;
+  height: 320px;
+  z-index: 3;
+  transform: scale(1);
+  box-shadow: 0 12px 48px rgba(14, 239, 255, 0.15), 0 4px 24px rgba(0,0,0,0.5);
+  border: 2px solid rgba(14, 239, 255, 0.25);
+}
+
+.carousel-card-center .carousel-card-overlay {
+  background: linear-gradient(180deg, transparent 50%, rgba(0, 0, 0, 0.55) 100%);
+  opacity: 1;
+}
+
+.carousel-card-center:hover .carousel-card-img {
+  transform: scale(1.05);
+}
+
+/* --- Left Card --- */
+.carousel-card-left {
+  width: 280px;
+  height: 240px;
+  z-index: 2;
+  transform: scale(0.88) rotateY(6deg) translateX(20px);
+  filter: brightness(0.6) saturate(0.7);
+  opacity: 0.75;
+}
+
+.carousel-card-left .carousel-card-overlay {
+  background: linear-gradient(90deg, rgba(0,0,0,0.5) 0%, transparent 100%);
+  opacity: 1;
+}
+
+/* --- Right Card --- */
+.carousel-card-right {
+  width: 280px;
+  height: 240px;
+  z-index: 2;
+  transform: scale(0.88) rotateY(-6deg) translateX(-20px);
+  filter: brightness(0.6) saturate(0.7);
+  opacity: 0.75;
+}
+
+.carousel-card-right .carousel-card-overlay {
+  background: linear-gradient(270deg, rgba(0,0,0,0.5) 0%, transparent 100%);
+  opacity: 1;
+}
+
+/* --- Fade animations --- */
+@keyframes cardFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+    filter: blur(4px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+    filter: blur(0);
+  }
+}
+
+@keyframes cardFadeOut {
+  from {
+    opacity: 1;
+    transform: scale(1);
+    filter: blur(0);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.92);
+    filter: blur(4px);
+  }
+}
+
+.carousel-fade-in {
+  animation: cardFadeIn 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.carousel-fade-out {
+  animation: cardFadeOut 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Override fade animation transform for side cards - keep their perspective */
+.carousel-card-left.carousel-fade-in {
+  animation: none;
+  opacity: 0.75;
+  transform: scale(0.88) rotateY(6deg) translateX(20px);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.carousel-card-right.carousel-fade-in {
+  animation: none;
+  opacity: 0.75;
+  transform: scale(0.88) rotateY(-6deg) translateX(-20px);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.carousel-card-left.carousel-fade-out,
+.carousel-card-right.carousel-fade-out {
+  animation: none;
+  opacity: 0.3;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* --- Navigation arrows --- */
+.carousel-arrow {
+  background: rgba(14, 239, 255, 0.1);
+  border: 1.5px solid rgba(14, 239, 255, 0.3);
+  color: #0ef;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(8px);
+  flex-shrink: 0;
+}
+
+.carousel-arrow:hover {
+  background: rgba(14, 239, 255, 0.25);
+  border-color: rgba(14, 239, 255, 0.6);
+  box-shadow: 0 0 20px rgba(14, 239, 255, 0.3);
+  transform: scale(1.1);
+}
+
+.carousel-arrow:active {
+  transform: scale(0.95);
+}
+
+/* --- Dot indicators --- */
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 1.5rem auto 0.5rem;
+}
+
+.carousel-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(14, 239, 255, 0.4);
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+}
+
+.carousel-dot:hover {
+  background: rgba(14, 239, 255, 0.3);
+  border-color: rgba(14, 239, 255, 0.7);
+}
+
+.carousel-dot-active {
+  background: #0ef;
+  border-color: #0ef;
+  box-shadow: 0 0 8px rgba(14, 239, 255, 0.5);
+  transform: scale(1.2);
+}
+
+/* Change button inside carousel */
+.carousel-change-btn {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  z-index: 5;
+  margin: 0;
+  font-size: 12px;
+  padding: 5px 14px;
+  border-radius: 20px;
+  background: rgba(0, 123, 255, 0.85);
+  backdrop-filter: blur(6px);
+}
+
+/* ========== Responsive ========== */
+
+@media screen and (max-width: 900px) {
+  .gallery-carousel {
+    gap: 0.5rem;
+    min-height: 280px;
+  }
+
+  .carousel-cards-wrapper {
+    gap: 0.8rem;
+    min-height: 280px;
+  }
+
+  .carousel-card-center {
+    width: 320px;
+    height: 250px;
+  }
+
+  .carousel-card-left,
+  .carousel-card-right {
+    width: 180px;
+    height: 180px;
+  }
+
+  .carousel-arrow {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .gallery-carousel {
+    gap: 0.3rem;
+    min-height: 220px;
+    margin: 2rem auto 1rem;
+  }
+
+  .carousel-cards-wrapper {
+    gap: 0.5rem;
+    min-height: 220px;
+  }
+
+  .carousel-card-center {
+    width: 260px;
+    height: 200px;
+  }
+
+  .carousel-card-left,
+  .carousel-card-right {
+    width: 120px;
+    height: 140px;
+    border-radius: 12px;
+  }
+
+  .carousel-card-left .carousel-card-inner,
+  .carousel-card-right .carousel-card-inner {
+    border-radius: 12px;
+  }
+
+  .carousel-arrow {
+    width: 34px;
+    height: 34px;
+  }
+
+  .carousel-arrow svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .carousel-dot {
+    width: 8px;
+    height: 8px;
+  }
 }

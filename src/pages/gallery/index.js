@@ -1,114 +1,146 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { useNavigate } from "react-router-dom";
-import { supabase } from '../../supabaseClient';
 
 import './Gallery.css';
 
-const supabaseBaseUrl = process.env.REACT_APP_SUPABASE_STORAGE;
-const role = localStorage.getItem('role');
 
-const allowedFiles = [
-  'nit1.JPG', 'nit10.JPG', 'nit18.JPG', 'nit21.JPG',
-  'nit17.JPG', 'nit27.JPG',
-  'nit41.JPG', 'nit29.JPG',
-  'nit54.JPG', 'nit57.JPG', 'nit58.JPG', 'nit59.JPG',
+
+// Local images from public/gallery-images/ic_startups_gallery/new-images/
+const galleryImages = [
+  'img1.JPG',
+  'img2.JPG',
+  'img3.jpg',
+  'img4.jpg',
+  'img5.jpg',
+  'img6.JPG',
+  'img7.JPG',
+  'img8.JPG',
+  'img9.JPG',
+  'img10.JPG',
+  'img11.JPG',
+  'img12.JPG',
+  'img13.JPG',
+  'img14.JPG',
+  'img15.JPG',
 ];
 
 const Gallery = () => {
-  const [imageNames, setImageNames] = useState([]);
+  const [imageNames, setImageNames] = useState(galleryImages);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [fadeState, setFadeState] = useState('in'); // 'in' or 'out'
+  const timerRef = useRef(null);
   const navigate = useNavigate();
 
-  useEffect(() => {
-    const fetchImages = async () => {
-      const { data, error } = await supabase.storage
-        .from('gallery-images')
-        .list('', { limit: 100 });
 
-      if (error) {
-        console.error('Error fetching image list:', error.message);
-        return;
-      }
+  const totalImages = imageNames.length;
 
-      const updatedImageNames = data
-        .filter(file => allowedFiles.includes(file.name))
-        .map(file => `${file.name}?t=${new Date(file.updated_at).getTime()}`); // Add timestamp
-
-      setImageNames(updatedImageNames);
-    };
-
-    fetchImages();
+  const goToIndex = useCallback((newIndex) => {
+    setFadeState('out');
+    setTimeout(() => {
+      setActiveIndex(newIndex);
+      setFadeState('in');
+    }, 400);
   }, []);
 
-  const handleChangeImage = (oldNameWithTimestamp) => {
-    const oldName = oldNameWithTimestamp.split('?')[0]; // Get pure filename without timestamp
-    const input = document.createElement('input');
-    input.type = 'file';
-    input.accept = '.jpg';
+  const goNext = useCallback(() => {
+    if (totalImages === 0) return;
+    goToIndex((activeIndex + 1) % totalImages);
+  }, [activeIndex, totalImages, goToIndex]);
 
-    input.onchange = async () => {
-      const file = input.files[0];
-      if (!file) return;
+  const goPrev = useCallback(() => {
+    if (totalImages === 0) return;
+    goToIndex((activeIndex - 1 + totalImages) % totalImages);
+  }, [activeIndex, totalImages, goToIndex]);
 
-      const fileExt = file.name.split('.').pop().toLowerCase();
-      if (fileExt !== 'jpg') {
-        alert('Only .jpg images are allowed. Please select a .jpg file.');
-        return;
-      }
+  // Auto-advance timer
+  useEffect(() => {
+    if (totalImages <= 1) return;
+    timerRef.current = setInterval(goNext, 3500);
+    return () => clearInterval(timerRef.current);
+  }, [goNext, totalImages]);
 
-      // Delete old image
-      await supabase.storage.from('gallery-images').remove([oldName]);
-
-      // Upload new image with same name
-      const { error } = await supabase.storage
-        .from('gallery-images')
-        .upload(oldName, file, { upsert: true });
-
-      if (error) {
-        alert('Error updating image: ' + error.message);
-      } else {
-        alert('Image replaced successfully!');
-        // Update state to trigger reload with new timestamp
-        setImageNames((prev) =>
-          prev.map((img) =>
-            img.startsWith(oldName) ? `${oldName}?t=${Date.now()}` : img
-          )
-        );
-      }
-    };
-
-    input.click();
+  // Get visible card indices (show 3 cards with center active)
+  const getVisibleCards = () => {
+    if (totalImages === 0) return [];
+    if (totalImages === 1) return [{ index: 0, position: 'center' }];
+    if (totalImages === 2) return [
+      { index: activeIndex, position: 'center' },
+      { index: (activeIndex + 1) % totalImages, position: 'right' },
+    ];
+    return [
+      { index: (activeIndex - 1 + totalImages) % totalImages, position: 'left' },
+      { index: activeIndex, position: 'center' },
+      { index: (activeIndex + 1) % totalImages, position: 'right' },
+    ];
   };
+
+
+  const visibleCards = getVisibleCards();
 
   return (
     <>
-     
       <div id="gallery" className="gallery">
         <h1 className="h11" data-aos="fade-down">Gallery</h1>
-        <div className="gallery1">
-          {imageNames.map((imgName, idx) => {
-            const cleanName = imgName.split('?')[0];
-            return (
-              <div className="gallerydiv" key={idx}>
-                <div className="imgdiv" data-aos="zoom-in">
-                  <img
-                    src={`${supabaseBaseUrl}${imgName}`}
-                    alt={cleanName}
-                    className="imgg"
-                  />
-                  {role === 'admin' && (
-                    <button
-                      className="change-button"
-                      onClick={() => handleChangeImage(imgName)}
-                    >
-                      Change
-                    </button>
-                  )}
+
+        <div className="gallery-carousel">
+          {/* Left Arrow */}
+          {totalImages > 1 && (
+            <button className="carousel-arrow carousel-arrow-left" onClick={goPrev} aria-label="Previous image">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <polyline points="15 18 9 12 15 6" />
+              </svg>
+            </button>
+          )}
+
+          {/* Cards */}
+          <div className="carousel-cards-wrapper">
+            {visibleCards.map(({ index, position }) => {
+              const imgName = imageNames[index];
+              const cleanName = imgName ? imgName.split('?')[0] : '';
+              return (
+                <div
+                  className={`carousel-card carousel-card-${position} ${fadeState === 'out' ? 'carousel-fade-out' : 'carousel-fade-in'}`}
+                  key={`${index}-${position}`}
+                >
+                  <div className="carousel-card-inner">
+                    <img
+                      src={`/gallery-images/ic_startups_gallery/new-images/${imgName}`}
+                      alt={cleanName}
+                      className="carousel-card-img"
+                      loading="lazy"
+                    />
+                    <div className="carousel-card-overlay" />
+                  </div>
                 </div>
-              </div>
-            );
-          })}
+              );
+            })}
+          </div>
+
+          {/* Right Arrow */}
+          {totalImages > 1 && (
+            <button className="carousel-arrow carousel-arrow-right" onClick={goNext} aria-label="Next image">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <polyline points="9 18 15 12 9 6" />
+              </svg>
+            </button>
+          )}
         </div>
+
+        {/* Dot Indicators */}
+        {totalImages > 1 && (
+          <div className="carousel-dots">
+            {imageNames.map((_, idx) => (
+              <button
+                key={idx}
+                className={`carousel-dot ${idx === activeIndex ? 'carousel-dot-active' : ''}`}
+                onClick={() => goToIndex(idx)}
+                aria-label={`Go to image ${idx + 1}`}
+              />
+            ))}
+          </div>
+        )}
+
         <div className="events_btn" data-aos="fade-left">
           <button className='btn' onClick={() => navigate('/gallery')}>
             View More
