@@ -3,8 +3,8 @@ import './card.css';
 import Navbar from '../../Navbar';
 import { incubationsData } from '../incubationsData.js';
 
-const FALLBACK_IMAGE = '/img/incubations/fliptoknow.png';
-const HEADER_IMAGE = '/img/image.jpg.jpg';
+const FALLBACK_IMAGE = 'https://res.cloudinary.com/ddb6lsyht/image/upload/v1782890649/fliptoknow_glfbbw.png';
+const HEADER_IMAGE = 'https://res.cloudinary.com/ddb6lsyht/image/upload/v1782897292/NITP_new_campus_gxybjz.jpg';
 const ITEMS_PER_PAGE = 5;
 
 function Pag() {

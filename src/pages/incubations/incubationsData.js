@@ -1,19 +1,19 @@
 export const incubationsData = [
   {
     name: "Onibus",
-    img: "img/incubations/onibus.png",
+    img: "https://res.cloudinary.com/ddb6lsyht/image/upload/v1782890649/onibus_eqijau.png",
     description: "Onibus offers a service-oriented app and web platform facilitating efficient communication between schools and parents about students' activities.",
     email: ""
   },
   {
     name: "Busy Mechanic",
-    img: "img/incubations/busymech.png",
+    img: "https://res.cloudinary.com/ddb6lsyht/image/upload/v1782890648/busymech_r5chgu.png",
     description: "Expert mobile mechanics providing reliable vehicle care and service at competitive prices, conveniently at your home or office.",
     email: ""
   },
   {
     name: "Shekhar Telesystems",
-    img: "img/incubations/shekhartele.png",
+    img: "https://res.cloudinary.com/ddb6lsyht/image/upload/v1782890649/shekhartele_nuuffg.png",
     description: "Shekhar Telesystems revolutionizes water management with advanced solutions for hassle-free living and upgraded surroundings.",
     email: ""
   },

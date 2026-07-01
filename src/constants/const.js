@@ -5,7 +5,8 @@ export const web3forms_api = "https://api.web3forms.com/submit";
 export const tinkering_lab = "https://tinkering-lab.onrender.com";
 export const nitp_main = "https://www.nitp.ac.in";
 export const pitchtember_url = "https://www.pitchtember.tech/";
-
+export const ic_logo = "https://res.cloudinary.com/ddb6lsyht/image/upload/v1782884080/ic_logo.png";
+export const nitp_logo = "https://res.cloudinary.com/ddb6lsyht/image/upload/v1782887916/nitp_logo.png";
 
 export const director_linkedin = "https://www.linkedin.com/in/sgbharat/?originalSubdomain=in";
 export const campus_image = "https://images.collegedunia.com/public/college_data/images/campusimage/1611227237IMG_20201103_111253.jpg";
