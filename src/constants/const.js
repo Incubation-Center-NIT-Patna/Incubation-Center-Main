@@ -16,6 +16,9 @@ export const facebook_url = "https://www.facebook.com/icnitp/";
 export const instagram_url = "https://www.instagram.com/incubation_nitp/";
 export const linkedin_url = "https://www.linkedin.com/company/incubation-centre-nit-patna/posts/?feedView=all";
 
+//cloudinary base url
+export const CLOUDINARY_BASE_URL = "https://res.cloudinary.com/ddb6lsyht/image/upload";
+
 // Student Executive Roles
 export const student_coordinator_linkedin = "https://www.linkedin.com/in/himanshu148/";
 export const student_cocoordinator_1_linkedin = "https://www.linkedin.com/in/sameer-gupta-18a366259/";
