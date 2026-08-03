@@ -1,6 +1,7 @@
 import React from 'react';
 import { director_linkedin, nitp_main } from '../../constants/const';
 import "./style.css";
+import { CLOUDINARY_BASE_URL } from "../../constants/const";
 
 const Director = () => {
 	return (
@@ -10,7 +11,7 @@ const Director = () => {
 
 				<article className="postcard dark blue">
 					<div className="postcard__img_link">
-						<img className="postcard__img" src="img/team/director.jpg" alt="Director NIT Patna" />
+						<img className="postcard__img" src={`${CLOUDINARY_BASE_URL}/v1782901704/director_yasexw.jpg`} alt="Director NIT Patna" />
 					</div>
 					<div className="postcard__text">
 						<h1 className="postcard__title blue"><span style={{ color: "#0ef" }}>Director, NIT Patna</span></h1>
@@ -32,7 +33,7 @@ const Director = () => {
 				</article>
 				<article className="postcard dark red">
 					<div className="postcard__img_link">
-						<img className="postcard__img" src="img/team/bharatgupta.jpg" alt="Prof. Bharat Gupta" />
+						<img className="postcard__img" src={`${CLOUDINARY_BASE_URL}/v1782901328/prof_bharat_gupta_ubqzlo.jpg`} alt="Prof. Bharat Gupta" />
 					</div>
 					<div className="postcard__text">
 						<h1 className="postcard__title red"><span>Professor in Charge

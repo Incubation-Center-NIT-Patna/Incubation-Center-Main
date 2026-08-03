@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { tinkering_lab, nitp_main } from '../../constants/const';
+import { ic_logo, nitp_logo, tinkering_lab, nitp_main } from '../../constants/const';
 import "./style.css";
 import { Link } from "react-router-dom";
 
@@ -50,7 +50,7 @@ const Navbar = () => {
       style={headerStyle}
     >
       <header className="header" style={navbarStyle}>
-        <a href={nitp_main} className="logo1"><img src="img/download-removebg-preview.png" alt="NITP_logo" /></a>
+        <a href={nitp_main} className="logo1"><img src={ nitp_logo } alt="NITP_logo" /></a>
         <nav className="navbar">
           <div className="link">
             <Link to="/#home">Home</Link>
@@ -175,7 +175,7 @@ const Navbar = () => {
         )}
 
         <a className="logo2" href="/">
-          <img src="/img/IC LOGO (1).png" alt="Incubation Centre logo" />
+          <img src={ ic_logo } alt="Incubation Centre logo" />
         </a>
       </header>
     </div>

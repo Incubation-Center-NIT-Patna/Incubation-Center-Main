@@ -189,7 +189,7 @@ const Talks =  () => {
     <div>
     <div className="talks_content" data-aos="fade-right">
       <h1>Our Enterpreneur's Talk</h1>
-    <p  >The Incubation Center at NIT Patna hosts regular entrepreneur talks, featuring successful startup founders who share their journeys and strategies. These sessions inspire aspiring entrepreneurs, offering practical insights into business challenges and fostering a supportive network. Such events empower participants with the knowledge and motivation to pursue entrepreneurial ventures effectively.</p>
+    <p>The Incubation Center at NIT Patna hosts regular entrepreneur talks, featuring successful startup founders who share their journeys and strategies. These sessions inspire aspiring entrepreneurs, offering practical insights into business challenges and fostering a supportive network. Such events empower participants with the knowledge and motivation to pursue entrepreneurial ventures effectively.</p>
     </div>
     </div>
     
@@ -201,7 +201,7 @@ const Talks =  () => {
           </div>
           <div className="talk_slide_profile">
             <div className="talk_slide_profile_photo">
-              <img src="img/Enterpreneurs/aa.jpg" alt="Raja Harish chandra"/>
+              <img src="https://res.cloudinary.com/ddb6lsyht/image/upload/v1782890580/aa_lnsosp.jpg" alt="Raja Harish chandra"/>
             </div>
             <div className="talk_slide_profile_content">
               <h3>Antesh  Anand</h3>
@@ -217,7 +217,7 @@ const Talks =  () => {
           </div>
           <div className="talk_slide_profile">
             <div className="talk_slide_profile_photo">
-              <img src="img/Enterpreneurs/puja.jpeg" alt="Raja Harish chandra"/>
+              <img src="https://res.cloudinary.com/ddb6lsyht/image/upload/v1782890581/puja_o9rzhz.jpg" alt="Raja Harish chandra"/>
             </div>
             <div className="talk_slide_profile_content">
               <h3>Puja</h3>
@@ -232,7 +232,7 @@ const Talks =  () => {
           </div>
           <div className="talk_slide_profile">
             <div className="talk_slide_profile_photo">
-              <img src="img/Enterpreneurs/rahul.jpeg" alt="Raja Harish chandra"/>
+              <img src="https://res.cloudinary.com/ddb6lsyht/image/upload/v1782890581/rahul_zobher.jpg" alt="Raja Harish chandra"/>
             </div>
             <div className="talk_slide_profile_content">
               <h3>Rahul Samrat</h3>
@@ -247,7 +247,7 @@ const Talks =  () => {
           </div>
           <div className="talk_slide_profile">
             <div className="talk_slide_profile_photo">
-              <img src="img/Enterpreneurs/alok.jpeg" alt="Raja Harish chandra"/>
+              <img src="https://res.cloudinary.com/ddb6lsyht/image/upload/v1782890581/alok_s5ag1j.jpg" alt="Raja Harish chandra"/>
             </div>
             <div className="talk_slide_profile_content">
               <h3>Alok Kumar</h3>
@@ -262,7 +262,7 @@ const Talks =  () => {
           </div>
           <div className="talk_slide_profile">
             <div className="talk_slide_profile_photo">
-              <img src="img/Enterpreneurs/aa.jpg" alt="Raja Harish chandra"/>
+              <img src="https://res.cloudinary.com/ddb6lsyht/image/upload/v1782890580/aa_lnsosp.jpg" alt="Raja Harish chandra"/>
             </div>
             <div className="talk_slide_profile_content">
               <h3>Antesh Anand</h3>
@@ -278,7 +278,7 @@ const Talks =  () => {
           </div>
           <div className="talk_slide_profile">
             <div className="talk_slide_profile_photo">
-              <img src="img/Enterpreneurs/puja.jpeg" alt="Raja Harish chandra"/>
+              <img src="https://res.cloudinary.com/ddb6lsyht/image/upload/v1782890581/puja_o9rzhz.jpg" alt="Raja Harish chandra"/>
             </div>
             <div className="talk_slide_profile_content">
               <h3>Puja</h3>
@@ -293,7 +293,7 @@ const Talks =  () => {
           </div>
           <div className="talk_slide_profile">
             <div className="talk_slide_profile_photo">
-              <img src="img/Enterpreneurs/rahul.jpeg" alt="Raja Harish chandra"/>
+              <img src="https://res.cloudinary.com/ddb6lsyht/image/upload/v1782890581/rahul_zobher.jpg" alt="Raja Harish chandra"/>
             </div>
             <div className="talk_slide_profile_content">
               <h3>Rahul Samrat</h3>
@@ -308,7 +308,7 @@ const Talks =  () => {
           </div>
           <div className="talk_slide_profile">
             <div className="talk_slide_profile_photo">
-              <img src="img/Enterpreneurs/alok.jpeg" alt="Raja Harish chandra"/>
+              <img src="https://res.cloudinary.com/ddb6lsyht/image/upload/v1782890581/alok_s5ag1j.jpg" alt="Raja Harish chandra"/>
             </div>
             <div className="talk_slide_profile_content">
               <h3>Alok Kumar</h3>
@@ -321,7 +321,7 @@ const Talks =  () => {
           </div>
           <div className="talk_slide_profile">
             <div className="talk_slide_profile_photo">
-              <img src="img/Enterpreneurs/aa.jpg" alt="Raja Harish chandra"/>
+              <img src="https://res.cloudinary.com/ddb6lsyht/image/upload/v1782890580/aa_lnsosp.jpg" alt="Raja Harish chandra"/>
             </div>
             <div className="talk_slide_profile_content">
               <h3>Antesh Anand</h3>
@@ -337,7 +337,7 @@ const Talks =  () => {
           </div>
           <div className="talk_slide_profile">
             <div className="talk_slide_profile_photo">
-              <img src="img/Enterpreneurs/puja.jpeg" alt="Raja Harish chandra"/>
+              <img src="https://res.cloudinary.com/ddb6lsyht/image/upload/v1782890581/puja_o9rzhz.jpg" alt="Raja Harish chandra"/>
             </div>
             <div className="talk_slide_profile_content">
               <h3>Puja</h3>
@@ -352,7 +352,7 @@ const Talks =  () => {
           </div>
           <div className="talk_slide_profile">
             <div className="talk_slide_profile_photo">
-              <img src="img/Enterpreneurs/rahul.jpeg" alt="Raja Harish chandra"/>
+              <img src="https://res.cloudinary.com/ddb6lsyht/image/upload/v1782890581/rahul_zobher.jpg" alt="Raja Harish chandra"/>
             </div>
             <div className="talk_slide_profile_content">
               <h3>Rahul Samrat</h3>
@@ -367,7 +367,7 @@ const Talks =  () => {
           </div>
           <div className="talk_slide_profile">
             <div className="talk_slide_profile_photo">
-              <img src="img/Enterpreneurs/alok.jpeg" alt="Raja Harish chandra"/>
+              <img src="https://res.cloudinary.com/ddb6lsyht/image/upload/v1782890581/alok_s5ag1j.jpg" alt="Raja Harish chandra"/>
             </div>
             <div className="talk_slide_profile_content">
               <h3>Alok Kumar</h3>

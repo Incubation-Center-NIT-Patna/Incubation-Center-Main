@@ -13,8 +13,7 @@
   color: #fff;
   background: var(--third-main-color);
   color: var(--text-color);
-  background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.4)),
-    url(img/background_img/IMG20230921194023.jpg);
+  background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.4));
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
@@ -35,30 +34,26 @@
 
 
 @keyframes change {
-  0% {
+  0%,100% {
     background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.4)),
-      url(img/background_img/home1.jpg);
+      url(https://res.cloudinary.com/ddb6lsyht/image/upload/v1782896081/home1_xxlclo.jpg);
   }
-  67% {
+  20% {
     background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.4)),
-      url(img/background_img/home2.jpg);
+      url(https://res.cloudinary.com/ddb6lsyht/image/upload/v1782896080/home2_fwse0q.jpg);
   }
-  100% {
+  40% {
     background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.4)),
-      url(img/background_img/home3.jpg);
+      url(https://res.cloudinary.com/ddb6lsyht/image/upload/v1782896080/home3_mss71d.jpg);
   }
-  33% {
+  60% {
     background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.4)),
-      url(img/background_img/home4.jpg);
+      url(https://res.cloudinary.com/ddb6lsyht/image/upload/v1782896082/home4_fgdtfi.jpg);
   }
-/*   80% {
+  80% {
     background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.4)),
-      url(img/background_img/5487146.jpg);
+      url(https://res.cloudinary.com/ddb6lsyht/image/upload/v1782896090/IMG20230921194023_rzcmok.jpg);
   }
-  100% {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.4)),
-      url(img/background_img/6895209.webp);
-  } */
 }
 
 .home html {
