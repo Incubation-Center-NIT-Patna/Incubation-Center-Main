@@ -104,7 +104,7 @@ const Incubations = () => {
         <div className="swiper-pagination"></div>
         <div className="incubations_btn_container">
           <button className='incubations_btn' onClick={() => navigate('/pag')}>
-            Litsen More</button>
+            Read More</button>
         </div>
 
       </section>

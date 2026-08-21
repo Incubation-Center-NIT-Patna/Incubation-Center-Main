@@ -30,7 +30,7 @@ const GoogleSlider = () => {
   return (
     <div className='howMain' id='support'>
     <div className="how_header">
-      <h1  data-aos="fade-down">How? we Support.</h1>
+      <h1 data-aos="fade-down">How we <span style={{ color: "#0ef" }}>Support?</span></h1>
     </div>
     <div className='slidesMain'> 
         <div className="slideNames" data-aos="fade-up">

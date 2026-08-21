@@ -86,7 +86,7 @@ export const incubationsData = [
   {
     name: "Competition king publication Pvt.Ltd.",
     img: "",
-    description: "हमारी कंपनी बुक्स में डील करती हैं हमारी कंपनी निम्न प्रॉब्लम को सॉल्व करती हैं 1-बहुत सारे नए पब्लिकेशन जिनको बुक सेल करने में दिक्कत आती है 2-रिटेलर जिनको सही कीमत पर बुक नहीं मिल पाती है 3- स्टूडेंट जोकि एजुकेशन लेकर जॉब ढूंढते हैं उनका भी हम लोग प्रॉब्लम सॉल्व पढ़ते हैं 4-स्टूडेंट जिनको किताब लेने के लिए बड़े शहरों में जाना पड़ता है",
+    description: "Our company deals in books and addresses key challenges: 1. New publishers struggling to market and sell books 2. Retailers unable to source books at fair prices 3. Students seeking employment opportunities after graduation 4. Students forced to travel to metro cities to purchase required books.",
     email: "competitionkingoff@gmail.com"
   },
   {
@@ -146,7 +146,7 @@ export const incubationsData = [
   {
     name: "A.K.A.K. ONLINE SERVICES & CONSULTANCY PVT.LTD.",
     img: "",
-    description: "मुख्य समस्या यह है कि छोटे शहरों की लोकल दुकानदार एवं छोटे आवश्यक घरेलू सुविधाएं जैसे कि प्लंबर , वायरिंग ,सीसीटीवी इंस्टॉलेशन, वेल्डिंग ,वाटर कैंट इत्यादि की सुविधाएं प्रत्येक घर तक पहुंचाना अभी तक आसानी से उपलब्ध नहीं है।",
+    description: "The main problem is that delivering essential household services—such as plumbing, wiring, CCTV installation, welding, and water purification—along with connecting local vendors in small towns directly to every doorstep is not yet easily accessible.",
     email: "amitmce2019@gmail.com"
   },
   {

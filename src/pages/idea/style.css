@@ -1,6 +1,6 @@
 #idea{ 
     box-sizing: border-box;
-    font-family: 'poppins', sans-serif;
+    font-family: var(--body-font, "Outfit", sans-serif);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -8,11 +8,12 @@
     /* min-height: 100vh; */
     background:  #1f242d;
     height: auto;
-    padding: 10rem 9% 4rem;
+    padding: 6rem 9% 2rem;
 }
 
 .idea h1{
-    font-size: 5rem;
+    font-size: 4rem;
+    font-weight: 700;
     color: #fff;
     text-align: center; 
 }
@@ -21,7 +22,7 @@
      /* margin-top: 290px; */
 /*     b
      width: 600px; */
-     height: 500px;
+     height: auto;
      margin-top: 30px;
  }
 .idea form{
@@ -44,22 +45,25 @@
 
 .idea .field .item{
     width: 100%;
-    padding: 18px;
+    padding: 14px 16px;
     background: transparent;
     border: 2px solid #0ef;
     outline: none;
     border-radius: 6px;
-    font-size: 16px;
-    color: #ededed;
-    margin: 12px 0;
+    font-size: 1rem;
+    font-family: inherit;
+    color: #ffffff;
+    margin: 10px 0;
+    box-sizing: border-box;
 }
 
 .idea .field.error .item{ 
     border-color: #d93025;
 }
 
-.idea .field.item::placeholder{
-    color: rgba(255,255,255,.3);
+.idea .field .item::placeholder{
+    color: rgba(255,255,255,.6);
+    font-family: inherit;
 }
 
 .idea .field .error-txt{
@@ -102,26 +106,45 @@
     box-shadow: none;
 }
 @media  screen and (max-width:619px) {
-      .idea form{
-      
-        width:380px;
-      }
+    .idea form{
+        width: 100%;
+        max-width: 480px;
+    }
+    .idea .input-box{
+        flex-direction: column;
+    }
+    .idea .input-box .input-field{
+        width: 100%;
+    }
 }
 @media  screen and (max-width:558px) {
+    #idea {
+        padding: 4rem 5% 1.5rem;
+    }
+    .idea form {
+        width: 100%;
+        max-width: 380px;
+    }
     .idea h1{
-        font-size: 3rem;
+        font-size: 2.8rem;
     } 
+    .idea .field .item {
+        padding: 12px 14px;
+        font-size: 0.95rem;
+        margin: 8px 0;
+    }
     .idea button{
-        height:28px;
+        height:38px;
         border-radius: 20px;
-        padding: 0px;
-        width:100px;
+        padding: 0 24px;
+        width:auto;
         font-size: 1rem;
+        margin-top: 10px;
     } 
 }
 @media  screen and (max-width:429px) {
     .idea form{
-      width:300px;
+        width: 100%;
+        max-width: 320px;
     }
-   
 }

@@ -188,8 +188,8 @@ const Talks =  () => {
       <section className="talks" id="talks">
     <div>
     <div className="talks_content" data-aos="fade-right">
-      <h1>Our Enterpreneur's Talk</h1>
-    <p>The Incubation Center at NIT Patna hosts regular entrepreneur talks, featuring successful startup founders who share their journeys and strategies. These sessions inspire aspiring entrepreneurs, offering practical insights into business challenges and fostering a supportive network. Such events empower participants with the knowledge and motivation to pursue entrepreneurial ventures effectively.</p>
+      <h1>Our <span style={{ color: "#0ef" }}>Entrepreneur's Talk</span></h1>
+    <p  >The Incubation Center at NIT Patna hosts regular entrepreneur talks, featuring successful startup founders who share their journeys and strategies. These sessions inspire aspiring entrepreneurs, offering practical insights into business challenges and fostering a supportive network. Such events empower participants with the knowledge and motivation to pursue entrepreneurial ventures effectively.</p>
     </div>
     </div>
     

@@ -5,9 +5,9 @@ const Faqs = () => {
   return (
     <div className='faq'>
     <div className='faqs'>
-      <div className="centerplease" data-aos="fade-down">
+      <h1 className="centerplease" data-aos="fade-down">
         FAQS
-      </div>
+      </h1>
       <br />
 
       <div className="content">
