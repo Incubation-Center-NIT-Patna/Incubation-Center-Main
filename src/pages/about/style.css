@@ -55,12 +55,17 @@
   }
   
   .about-content ul li{ 
-    font-size:1.6rem ;
-    row-gap: 1rem;
+    font-size: 1.2rem;
+    line-height: 1.7;
     list-style: disc;
-    color: #0ef;
+    color: #fff;
     margin-bottom: 1.2rem;
   }
+
+  .about-content ul li::marker {
+    color: #0ef;
+  }
+
   .about-content h3{
     color: #fff;
     font-size: 2.6rem;
@@ -77,12 +82,10 @@
   }
   
   .about-content p{ 
-    font-size:1.6rem ;
+    font-size: 1.2rem;
+    line-height: 1.7;
     color: #fff;
-  }
-
-  .about-content ul li{
-    color: #0ef;
+    text-align: justify;
   }
   
   @media screen and (max-width:988px){
@@ -127,13 +130,12 @@
     .about-content h3{
       font-size: 1rem;
     }
-    .about-content p{
-      font-size: 1rem;
-      line-height: 1.7;
-    }
+    .about-content p,
     .about-content ul li{
       font-size: 1rem;
-      line-height: 1.6;
+      line-height: 1.7;
+      color: #fff;
+      text-align: justify;
     }
     .about-content ul {
       padding-left: 1.1rem;
@@ -141,14 +143,21 @@
 
   }
 
-  .about-content p {
+  .about-content p,
+  .about-content ul li {
   font-size: 1rem;
   line-height: 1.7;
+  color: #fff;
+  text-align: justify;
 }
 
 @media (min-width: 768px) {
-  .about-content p {
+  .about-content p,
+  .about-content ul li {
     font-size: 1.2rem;
+    line-height: 1.7;
+    color: #fff;
+    text-align: justify;
   }
 }
 

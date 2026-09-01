@@ -7,7 +7,7 @@ const Director = () => {
 	return (
 		<section className="dark" id='darki'>
 			<div className="container py-4">
-				<h1 className="h1 text-center" id="pageHeaderTitle" style={{ color: "#0ef" }}>Director Desk</h1>
+				<h1 className="h1 text-center" id="pageHeaderTitle" data-aos="fade-down">Director <span style={{ color: "#0ef" }}>Desk</span></h1>
 
 				<article className="postcard dark blue">
 					<div className="postcard__img_link">
@@ -31,24 +31,19 @@ const Director = () => {
 						</ul>
 					</div>
 				</article>
-				<article className="postcard dark red">
+				<article className="postcard dark blue">
 					<div className="postcard__img_link">
 						<img className="postcard__img" src={`${CLOUDINARY_BASE_URL}/v1782901328/prof_bharat_gupta_ubqzlo.jpg`} alt="Prof. Bharat Gupta" />
 					</div>
 					<div className="postcard__text">
-						<h1 className="postcard__title red"><span>Professor in Charge
-            INCUBATION CENTER</span></h1>
-						<div className="postcard__subtitle small">
-							<time dateTime="2020-05-25 12:00:00">
-								<i className="fas fa-calendar-alt mr-2"></i>Mon, May 25th 2020
-							</time>
-						</div>
+						<h1 className="postcard__title blue"><span>Professor in Charge
+							INCUBATION CENTER</span></h1>
 						<div className="postcard__bar"></div>
 						<div className="postcard__preview-txt">Dr. Bharat Gupta leads the Electronics and Communication Department, spearheading research and educational initiatives in cutting-edge technologies and applications.</div>
 						<ul className="postcard__tagbox">
 							{/* <li className="tag__item"><i className="fas fa-tag mr-2"></i>Podcast</li>
 							<li className="tag__item"><i className="fas fa-clock mr-2"></i>55 mins.</li> */}
-							<li className="tag__item play red">
+							<li className="tag__item play blue">
 								<a href={director_linkedin}><i className="fas fa-play mr-2"></i>Know More</a>
 							</li>
 						</ul>

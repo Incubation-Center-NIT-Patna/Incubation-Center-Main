@@ -2,7 +2,7 @@
   background-color: transparent;
   color: black;
   font-size: 1.7rem;
-  padding: 10rem 9% 4rem;
+  padding: 2.5rem 9% 4rem;
   background-color: #0000004a;
         opacity: 1;
         background-image: radial-gradient(#142850 1px, #000000 1px);
@@ -22,10 +22,9 @@
 .faqs .centerplease {
   text-align: center;
   margin: 0 auto;
-  max-width: 270px;
-  font-size: 5rem;
+  font-size: 4rem;
   color: white;
-  font-weight: bold; 
+  font-weight: 700; 
 }
 
 .faqs .outer{
@@ -115,6 +114,9 @@
 }
 
 @media screen and (max-width:558px){
+  .faqs {
+    padding: 1.5rem 5% 3rem;
+  }
   .centerplease{
   display: flex;
   align-items: center;
@@ -122,7 +124,7 @@
 
   }
   .faqs .centerplease{
-    font-size: 3rem;
+    font-size: 2.8rem;
   }
   .question{
     font-size: 1rem;

@@ -6,7 +6,7 @@ const Idea = () => {
   return (
     <div>
       <section className="idea" id="idea">
-        <h1 data-aos="fade-down">Incubate u'r Idea</h1>
+        <h1 data-aos="fade-down">Incubate Your <span style={{ color: "#0ef" }}>Idea</span></h1>
         <div className='form' data-aos="fade-up">
           <form action="#" onSubmit={IdeaJs}>
 

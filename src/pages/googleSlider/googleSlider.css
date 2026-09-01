@@ -17,32 +17,52 @@ background-size: 16px 16px;
 
 .slidesMain .slideNames{
     display: flex;
-    padding: 20px;
+    flex-wrap: wrap;
+    padding: 20px 10px;
     align-items: center;
     justify-content: center;
-    font-size: 2rem;
-    gap: 50px;
+    gap: 20px;
 }
 
 .slidesMain .slideNames div{
-    padding: 20px 30px;
+    padding: 12px 24px;
     cursor: pointer;
     background-color: white;
-    border-radius: 5px;
+    border-radius: 12px;
     color: black;
-    font-size:10px ;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
 }
 .slidesMain .slideNames div h2{
-    color:black;
- 
+    color: black;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0;
+    width: auto;
 }
 
 .slidesMain .active{
-   outline: 5px solid rgb(49, 94, 255);
+   outline: 4px solid rgb(49, 94, 255);
 }
 .how_header{
     text-align: center;
     background-color: black;
+    padding-top: 2rem;
+}
+
+.how_header h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+@media screen and (max-width: 558px) {
+    .how_header h1 {
+        font-size: 2.8rem;
+    }
 }
 
 .slidesMain .infoSection{
@@ -89,55 +109,59 @@ background-size: 16px 16px;
     object-fit: cover;
 }
 @media screen and (max-width:740px){
-   .slideNames{
-    margin: auto;
-        
-             gap: 20px;
+   .slidesMain .slideNames{
+        margin: auto;
+        gap: 12px;
+        padding: 10px 5px;
     }
-    .slideNames div{
-        width:20%;
-       
+    .slidesMain .slideNames div{
+        width: auto;
+        height: auto;
+        padding: 8px 16px;
     }
- .slideNames h2{
-    width:100%;
-    font-size: 10px;
+    .slidesMain .slideNames div h2{
+        width: auto;
+        font-size: 0.95rem;
     }
 }
 @media screen and (max-width:679px){
-    .slideNames h2{
-      
+    .slidesMain .slideNames div h2{
        display: inline-block;
-       width:50px;
-        
+       width: auto;
+       font-size: 0.9rem;
     }
     .slidesMain .slideNames {
-        display:flex;
-        gap:18px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
     }
-    .slideNames div{
-       height:30px;
-       display:flex;
+    .slidesMain .slideNames div{
+       height: auto;
+       width: auto;
+       padding: 8px 14px;
+       display: flex;
        align-items: center;
        justify-content: center;
     }
-    .infoSection{
+    .slidesMain .infoSection{
         display: flex;
-        flex-direction:column-reverse;
+        flex-direction: column-reverse;
         margin-top: 10px;
     }
-    .dataSection{
+    .slidesMain .dataSection{
         padding-top: 20px;
     }
-    .imgSection{
+    .slidesMain .imgSection{
         margin-top: 20px;
+        height: 250px;
     }
 }
 @media screen and (max-width:400px){
     .slidesMain .slideNames {
-        display:flex;
-        gap:10px;
+        display: flex;
+        gap: 8px;
     }
-    
 }
 @media screen and (max-width:558px){
     .dataSection .wrapper p{
