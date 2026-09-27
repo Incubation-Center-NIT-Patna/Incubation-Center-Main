@@ -3,6 +3,9 @@ import { pitchtember_url } from "../../constants/const";
 import "./style.css";
 import { Link, useNavigate } from "react-router-dom";
 
+//cloudinary base url
+export const CLOUDINARY_BASE_URL = "https://res.cloudinary.com/ddb6lsyht/image/upload";
+
 const eventsData = [
   {
     title: "Orientation Session 2023",
@@ -23,6 +26,13 @@ const eventsData = [
     date: "09/02/2024",
     venue: "Online",
     image: "https://res.cloudinary.com/ddb6lsyht/image/upload/v1782890671/sms_a5537x.jpg",
+    url: "/timeline",
+  },
+  {
+    title: "Pitchverse 2026",
+    date: "19/09/2026",
+    venue: "Offline",
+    image: `${CLOUDINARY_BASE_URL}/pitchverse_2026.jpg`,
     url: "/timeline",
   },
 ];
