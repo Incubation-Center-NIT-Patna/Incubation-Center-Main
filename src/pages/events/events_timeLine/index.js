@@ -26,6 +26,13 @@ const eventsTimelineData = [
     description:
       "The IPSIT Stock Market Simulation, sponsored by StockGro, provided participants with an immersive and educational experience in virtual stock trading without financial risk. Each participant was allocated 10 lakh virtual money for a day of trading on actual stocks. Almost 300 participants showcased their interest, emphasizing the importance of effective trading strategies in achieving success.",
   },
+  {
+    logo: ic_logo,
+    title: "Pitchverse 2026",
+    date: "19/09/2026",
+    description:
+      "An unconventional entrepreneurship event where fiction meets venture capital. Participants step into the roles of iconic fictional characters and pitch their impossible, absurd, or extraordinary products as if they were real startups seeking investment."
+  },
 ];
 
 function Timeline() {
